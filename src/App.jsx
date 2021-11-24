@@ -31,17 +31,32 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+  // Compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       if (choiceOne.src === choiceTwo.src) {
-        console.log("Match");
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
+            // Set matched cards to true
+            if (card.src === choiceOne.src) {
+              return {
+                ...card,
+                matched: true,
+              };
+            } else {
+              return card;
+            }
+          });
+        });
         resetTurn();
       } else {
-        console.log("No Match");
         resetTurn();
       }
     }
   }, [choiceOne, choiceTwo]);
+
+  // Log all cards for debugging
+  console.log(cards);
 
   const resetTurn = () => {
     setChoiceOne(null);

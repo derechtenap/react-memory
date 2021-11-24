@@ -1,26 +1,32 @@
 [
   {
     "src": "/img/brutal-helm.svg",
-    "css": "front cherry"
+    "css": "front cherry",
+    "matched": false
   },
   {
     "src": "/img/dwarf-helmet.svg",
-    "css": "front raspberry"
+    "css": "front raspberry",
+    "matched": false
   },
   {
     "src": "/img/fragmented-sword.svg",
-    "css": "front subu"
+    "css": "front subu",
+    "matched": false
   },
   {
     "src": "/img/abdominal-armor.svg",
-    "css": "front sun"
+    "css": "front sun",
+    "matched": false
   },
   {
     "src": "/img/broadhead-arrow.svg",
-    "css": "front mauve"
+    "css": "front mauve",
+    "matched": false
   },
   {
     "src": "/img/edged-shield.svg",
-    "css": "front leaf"
+    "css": "front leaf",
+    "matched": false
   }
 ]
