@@ -18,12 +18,11 @@ function App() {
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() })); // Map them into a new Array
 
+    // Reset choices just in case one is still set
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(SHUFFLED_CARDS);
     setTurns(0);
-
-    let cardGrid = document.getElementById("cardGrid");
-
-    cardGrid.style.removeProperty("display");
   };
 
   const handleChoice = (card) => {
@@ -64,9 +63,14 @@ function App() {
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns((prevTurns) => prevTurns++);
+    setTurns((prevTurns) => prevTurns + 1); // prevTurns++ is not working
     setDisabled(false);
   };
+
+  // Start a new game automagically
+  useEffect(() => {
+    SHUFFLE_CARDS();
+  }, []);
 
   return (
     <div className="App">
@@ -77,15 +81,8 @@ function App() {
         </div>
         <button onClick={SHUFFLE_CARDS}>New Game</button>
       </header>
-      <div className="info">
-        {cards.length > 0 ? (
-          <span style={{ display: "none" }}></span>
-        ) : (
-          <span className="danger">You need to start a new game!</span>
-        )}
-      </div>
 
-      <div className="grid" id="cardGrid" style={{ display: "none" }}>
+      <div className="grid" id="cardGrid">
         {cards.map((card) => (
           <Card
             key={card.id}
