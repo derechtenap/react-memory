@@ -1,6 +1,6 @@
 # React Memory
 
-Memory game based on '[The Net Ninja](https://www.youtube.com/c/TheNetNinja/videos)'s YouTube tutorials. You can watch the tutorial at [YouTube](https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm). I slightly modified the project with additional Icons, CSS and Components. Built with React.
+Memory game based on '[The Net Ninja](https://www.youtube.com/c/TheNetNinja/videos)'s YouTube tutorials. You can watch the tutorial series at [YouTube](https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm). I slightly modified the project with additional Icons, CSS and Components. Built with React.
 
 ## SVG Icons
 
@@ -16,7 +16,7 @@ You can find the Icons and many more at [game-icons.net](https://game-icons.net/
 - [Edged Shield icon](https://game-icons.net/1x1/lorc/edged-shield.html) by [Lorc](https://lorcblog.blogspot.com/) under CC BY 3.0
 - [Fragmented sword icon](https://game-icons.net/1x1/lorc/fragmented-sword.html) by [Lorc](https://lorcblog.blogspot.com/) under CC BY 3.0
 
-The files `logo-192.png`, `logo-512.png` and `favicon.ico` are a marginally modified version of the Card random icon. Using a custom gradient
+The files `logo-192.png`, `logo-512.png` and `favicon.ico` are marginally modified versions of the Card random icon. Using a custom gradient.
 
 ## Gradients
 
