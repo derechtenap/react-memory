@@ -1,0 +1,26 @@
+[
+  {
+    "src": "/img/brutal-helm.svg",
+    "css": "front cherry"
+  },
+  {
+    "src": "/img/dwarf-helmet.svg",
+    "css": "front raspberry"
+  },
+  {
+    "src": "/img/fragmented-sword.svg",
+    "css": "front subu"
+  },
+  {
+    "src": "/img/abdominal-armor.svg",
+    "css": "front sun"
+  },
+  {
+    "src": "/img/broadhead-arrow.svg",
+    "css": "front mauve"
+  },
+  {
+    "src": "/img/edged-shield.svg",
+    "css": "front leaf"
+  }
+]
