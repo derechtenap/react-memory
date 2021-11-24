@@ -50,7 +50,8 @@ function App() {
         });
         resetTurn();
       } else {
-        resetTurn();
+        // Wait 500ms before flip the cards back again
+        setTimeout(() => resetTurn(), 500);
       }
     }
   }, [choiceOne, choiceTwo]);
@@ -83,7 +84,14 @@ function App() {
 
       <div className="grid" id="cardGrid" style={{ display: "none" }}>
         {cards.map((card) => (
-          <Card key={card.id} card={card} handleChoice={handleChoice} />
+          <Card
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            // Flip the card on screen if card is choiceOne/Two or already matched
+            // choiceOne/Two = onClick!
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+          />
         ))}
       </div>
     </div>

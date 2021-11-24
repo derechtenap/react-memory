@@ -1,12 +1,12 @@
 import "../Card.css";
-export default function Card({ card, handleChoice }) {
+export default function Card({ card, handleChoice, flipped }) {
   const handleClick = () => {
     handleChoice(card);
   };
 
   return (
     <div className="card">
-      <div>
+      <div className={flipped ? "flipped" : ""}>
         <img
           className={card.css}
           src={card.src}
