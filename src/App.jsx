@@ -8,6 +8,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   const SHUFFLE_CARDS = () => {
     // Duplicate the cards and sort them with a random number
@@ -34,6 +35,7 @@ function App() {
   // Compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true); // Disable player input
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -63,6 +65,7 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns++);
+    setDisabled(false);
   };
 
   return (
@@ -91,6 +94,7 @@ function App() {
             // Flip the card on screen if card is choiceOne/Two or already matched
             // choiceOne/Two = onClick!
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
           />
         ))}
       </div>

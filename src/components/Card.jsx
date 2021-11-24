@@ -1,7 +1,10 @@
 import "../Card.css";
-export default function Card({ card, handleChoice, flipped }) {
+export default function Card({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
-    handleChoice(card);
+    // Stop the player from selecting to many cards at once
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
 
   return (
