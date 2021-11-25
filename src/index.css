@@ -4,8 +4,13 @@
 :root {
   --font-stack: "Open Sans", sans-serif;
   --white: #fafafa;
+  --gray: #cdcdcd;
+  --bg-content: #2d2d2d;
   --dark: #1d1d1d;
   --base-size: 1rem;
+  --border-radius: 15px;
+  --transition-button: 500ms;
+  --transition-flip: 250ms;
 }
 
 *,
