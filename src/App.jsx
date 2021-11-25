@@ -75,7 +75,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="inline">
+        <div className="w-100">
           <h1>Memory</h1>
           <var>Turns: {turns}</var>
         </div>
