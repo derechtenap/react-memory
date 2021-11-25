@@ -6,7 +6,7 @@
   width: 100%;
   display: block;
   border-radius: var(--border-radius);
-  border: 2px solid var(--white);
+  border: 2px solid var(--primary);
 }
 
 /* Hide the card */

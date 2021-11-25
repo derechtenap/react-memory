@@ -1,16 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,300&display=swap");
 
-/* Global Styles */
 :root {
   --font-stack: "Open Sans", sans-serif;
-  --white: #fafafa;
-  --gray: #cdcdcd;
-  --bg-content: #2d2d2d;
-  --dark: #1d1d1d;
   --base-size: 1rem;
   --border-radius: 15px;
   --transition-button: 500ms;
   --transition-flip: 250ms;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #1d1d1d;
+    --primary-50: #cdcdcd;
+    --secondary: #fafafa;
+    --bg-content: #cfcfcf;
+    --button-primary: #0984e3;
+    --button-primary-hover: #0a91f8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #fafafa;
+    --primary-50: #cdcdcd;
+    --secondary: #1d1d1d;
+    --bg-content: #2d2d2d;
+    --button-primary: #056cbb;
+    --button-primary-hover: #0964aa;
+  }
 }
 
 *,
@@ -22,8 +39,8 @@
 }
 
 body {
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--secondary);
+  color: var(--primary);
   font-family: var(--font-stack);
   font-size: var(--base-size);
   -webkit-font-smoothing: antialiased;
