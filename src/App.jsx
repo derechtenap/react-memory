@@ -26,7 +26,7 @@ function App() {
   };
 
   const handleChoice = (card) => {
-    console.info(card);
+    // console.info(card);
     // if choiceOne isn't null then setChoiceTwo else setChoiceOne
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
@@ -58,7 +58,7 @@ function App() {
   }, [choiceOne, choiceTwo]);
 
   // Log all cards for debugging
-  console.log(cards);
+  // console.info(cards);
 
   const resetTurn = () => {
     setChoiceOne(null);
