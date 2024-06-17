@@ -10,13 +10,13 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-  const SHUFFLE_CARDS = () => {
+  const handleStartNewGame = () => {
     // Duplicate the cards and sort them with a random number
     // If the number is <0 the order stays the same
     // If the number is >0 the order of those two items that it's comparing is mixed up
     const SHUFFLED_CARDS = [...IMAGES, ...IMAGES]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() })); // Map them into a new Array
+      .map((card) => ({ ...card, id: Math.random() }));
 
     // Reset choices just in case one is still set
     setChoiceOne(null);
@@ -26,15 +26,15 @@ function App() {
   };
 
   const handleChoice = (card) => {
-    // console.info(card);
-    // if choiceOne isn't null then setChoiceTwo else setChoiceOne
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  // Compare 2 selected cards
+  // Compare the selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      setDisabled(true); // Disable player input
+      // Disable player input
+      setDisabled(true);
+
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -49,27 +49,24 @@ function App() {
             }
           });
         });
+
         resetTurn();
       } else {
-        // Wait 500ms before flip the cards back again
+        // After 500ms flip the cards back
         setTimeout(() => resetTurn(), 500);
       }
     }
   }, [choiceOne, choiceTwo]);
 
-  // Log all cards for debugging
-  // console.info(cards);
-
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns((prevTurns) => prevTurns + 1); // prevTurns++ is not working
+    setTurns((prevTurns) => prevTurns + 1);
     setDisabled(false);
   };
 
-  // Start a new game automagically
   useEffect(() => {
-    SHUFFLE_CARDS();
+    handleStartNewGame();
   }, []);
 
   return (
@@ -79,7 +76,7 @@ function App() {
           <h1>Memory</h1>
           <var>Turns: {turns}</var>
         </div>
-        <button onClick={SHUFFLE_CARDS}>New Game</button>
+        <button onClick={handleStartNewGame}>New Game</button>
       </header>
 
       <div className="grid" id="cardGrid">
@@ -88,8 +85,7 @@ function App() {
             key={card.id}
             card={card}
             handleChoice={handleChoice}
-            // Flip the card on screen if card is choiceOne/Two or already matched
-            // choiceOne/Two = onClick!
+            // Flip card if selected or already matched
             flipped={card === choiceOne || card === choiceTwo || card.matched}
             disabled={disabled}
           />
