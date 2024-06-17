@@ -11,12 +11,10 @@ function App() {
   const [disabled, setDisabled] = useState(false);
 
   const handleStartNewGame = () => {
-    // Duplicate the cards and sort them with a random number
-    // If the number is <0 the order stays the same
-    // If the number is >0 the order of those two items that it's comparing is mixed up
+    // Duplicate the cards and shuffle them randomly
     const SHUFFLED_CARDS = [...IMAGES, ...IMAGES]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card) => ({ ...card, id: crypto.randomUUID() }));
 
     // Reset choices just in case one is still set
     setChoiceOne(null);
